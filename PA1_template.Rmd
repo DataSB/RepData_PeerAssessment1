@@ -5,7 +5,6 @@
 ```{r}
 data <- read.csv("activity.csv", header=TRUE)
 clean_data <- data[which(data$steps != "NA"), ]
-
 ```
 
 ## What is mean total number of steps taken per day?
