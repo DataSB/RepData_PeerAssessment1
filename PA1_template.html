@@ -212,7 +212,7 @@ total_by_day &lt;- ddply(clean_data, .(date), summarize, steps = sum(steps))
 <pre><code class="r">
 # Making the histogram
 
-hist(total_by_day$steps, main = &quot;Number of steps&quot;, xlab = &quot;Total number of steps taken each day&quot;, 
+hist(total_by_day$steps, main = &quot;Number of Steps&quot;, xlab = &quot;Total number of steps taken each day&quot;, 
     col = &quot;red&quot;)
 </code></pre>
 
@@ -293,7 +293,7 @@ merged$steps[is.na(merged$steps)] &lt;- merged$intervalAvg[is.na(merged$steps)]
 
 <pre><code class="r">
 # Making the histogram
-new_total_by_day &lt;- ddply(merged, .(date), summarize, steps = sum(steps))
+new_total_by_day &lt;- ddply(merged, .(date), summarise, steps = sum(steps))
 </code></pre>
 
 <pre><code>## Error: object &#39;merged&#39; not found

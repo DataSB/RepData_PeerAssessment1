@@ -39,7 +39,7 @@ total_by_day <- ddply(clean_data, .(date), summarize, steps = sum(steps))
 
 # Making the histogram
 
-hist(total_by_day$steps, main = "Number of steps", xlab = "Total number of steps taken each day", 
+hist(total_by_day$steps, main = "Number of Steps", xlab = "Total number of steps taken each day", 
     col = "red")
 ```
 
@@ -142,7 +142,7 @@ merged$steps[is.na(merged$steps)] <- merged$intervalAvg[is.na(merged$steps)]
 ```r
 
 # Making the histogram
-new_total_by_day <- ddply(merged, .(date), summarize, steps = sum(steps))
+new_total_by_day <- ddply(merged, .(date), summarise, steps = sum(steps))
 ```
 
 ```

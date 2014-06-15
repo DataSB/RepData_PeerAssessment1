@@ -15,8 +15,8 @@ total_by_day <- ddply(clean_data, .(date), summarize, steps=sum(steps))
 
 # Making the histogram 
 
-hist(total_by_day$steps, main="Number of steps", 
-xlab="Total number of steps taken each day", col="red")
+hist(total_by_day$steps, main="Number of Steps", 
+        xlab="Total number of steps taken each day", col="red")
 
 # Calculating mean and median
 mean(total_by_day$steps)
@@ -29,10 +29,10 @@ average_by_interval <- ddply(clean_data, .(interval), summarize, steps=mean(step
 
 # Making the time series plot
 plot(average_by_interval$interval, average_by_interval$steps, type="l", 
-col="blue",
-xlab="5-minute interval", 
-ylab="Average number of steps taken",
-main="Average daily activity pattern")
+        col="blue",
+        xlab="5-minute interval", 
+        ylab="Average number of steps taken",
+        main="Average daily activity pattern")
 
 # Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 average_by_interval[average_by_interval$steps==max(average_by_interval$steps),]
@@ -51,9 +51,9 @@ merged <- arrange(join(data, average_by_interval), interval)
 merged$steps[is.na(merged$steps)] <- merged$intervalAvg[is.na(merged$steps)]
 
 # Making the histogram
-new_total_by_day <- ddply(merged, .(date), summarize, steps=sum(steps))
+new_total_by_day <- ddply(merged, .(date), summarise, steps=sum(steps))
 hist(new_total_by_day$steps, main="Number of Steps", 
-xlab="Total number of steps taken each day", col="red",)
+        xlab="Total number of steps taken each day", col="red",)
 
 # Calculating mean and median total number of steps taken per day
 mean(new_total_by_day$steps)
